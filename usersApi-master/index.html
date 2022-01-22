@@ -1,0 +1,58 @@
+<html lang="en">
+    
+<head>
+    
+    <link rel="stylesheet" href="./css/custom.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="clases.js" ></script>    
+    <script src="tabla.js" ></script>    
+    <title>Document</title>
+</head>
+<body>           
+    <div class="divFlex">
+                 <div class="column-30">
+                <h1>ABM PERSONAS</h1>              
+                <div class="row"> <p>ID:</p> <input type="text" id="id"/> </div>
+                <div class="row"> <p>Nombre:</p> <input type="text" id="nombre"/> </div>
+                <div class="row"> <p>Apellido:</p> <input type="text" id="apellido"/></div>
+                <div class="row">  <p>Edad:</p> <input type="text" id="edad"/></div>
+                <div class="row">  <p>Sexo:</p>  <select id="sexo" id="sexo"> </select> </div>       
+                <div class="row">  <input type="button" class="btn-promedio" value="Agregar" onclick="agregarCliente()"  />
+                    <input type="button" value="Eliminar" onclick="eliminarPersona()"  class="btn-borrar" /> 
+                    <input type="button" value="Limpiar" onclick="cleanData()"  class="btn-borrar" />
+                </div>
+
+                <h1>FILTROS</h1>
+                <div class="row">  <p>Filtrar por:</p> <select id="sexo_filtro" onchange="filtrarTabla()"> </select> <input  class="btn-borrar" type="button" value="x" onclick="LimpiarFiltro()"  /></div>
+                <div class="row">  <p>Promedio edad:</p> <input type="text" id="prom"/> </select></div>  
+                <div class="row">  <input  type="button"  class="btn-promedio" value="Calcular promedio" onclick="calcularPromedio()"  /></div>  
+                </div>  
+                <div class="column-70">
+                    <div class="data_table">
+                    <h1>TABLA</h1>
+                    <label><input type="checkbox" checked="true" id="cb_id"  onchange="CambiarEstadoColumna(0)">ID</label>
+                    <label><input type="checkbox" id="cb_nombre"  checked="true"  onchange="CambiarEstadoColumna(1)">Nombre</label>
+                    <label><input type="checkbox" id="cb_apellido"   checked="true" onchange="CambiarEstadoColumna(2)">Apellido</label>
+                    <label><input type="checkbox" id="cb_edad"  checked="true"  onchange="CambiarEstadoColumna(3)">Edad</label>                   
+                    </div>
+                    <table id="tabla" class="grilla tabla">
+                    <thead>                    
+                    <tr>
+                        <th > ID</th>
+                        <th> Nombre</th>
+                        <th> Apellido</th>
+                        <th> Edad</th>
+                        <th> Sexo</th>
+                    </tr>
+                    </thead>
+                    <tbody id="body_id" >
+                    </tbody>
+                </table>
+            </div>
+        </div>
+            
+</body>
+</html>
